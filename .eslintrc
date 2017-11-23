@@ -1,0 +1,14 @@
+{
+  "extends": [
+	  "prettier-standard"
+  ],
+
+  "env": {
+    "jest": true,
+    "jasmine": true
+  },
+
+  "globals": {
+    "include": false
+  }
+}
