@@ -1,7 +1,7 @@
 {
   "name": "bowow",
   "version": "1.0.0",
-  "description": "Browser Automation tool",
+  "description": "A micro browser automation tool",
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --fix",
@@ -25,12 +25,10 @@
   },
   "homepage": "https://github.com/allain/bowow#readme",
   "dependencies": {
-    "bent": "^1.1.0",
     "chromedriver": "^2.33.2",
     "debug": "^3.1.0",
     "get-port": "^3.2.0",
-    "node-fetch": "^1.7.3",
-    "reuser": "^1.2.2"
+    "node-fetch": "^1.7.3"
   },
   "devDependencies": {
     "eslint": "^4.8.0",
