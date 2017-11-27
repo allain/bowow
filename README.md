@@ -8,9 +8,9 @@ A micro-library for browser automation.
 * jQuery always available
 * Built directly on the [w3c-webdriver spec](https://w3c.github.io/webdriver/webdriver-spec.html).
 
-## Usage
+## Example Usage
 
-Search Google and return the first search result's url.
+Thie example searches Google and returns the first search result's url.
 
 ```js
 const bowow = require('.')
@@ -27,9 +27,9 @@ bowow(async $ => {
   // Click on the Search button
   await $(`input[type='button'][value='Google Search']`).click()
 
-  // Extract the first link's url
-  return $('#res #search .srg h3:first').attr('href')
-}).then(console.log)
+  // collect all links in search results
+  return $('#res #search h3 > a').map((index, e) => $(e).attr('href'))
+}).then(console.log) // outputs an array of urls
 ```
 
 ## API
