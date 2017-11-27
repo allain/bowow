@@ -1,6 +1,6 @@
 {
   "name": "bowow",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A micro browser automation tool",
   "main": "index.js",
   "scripts": {
