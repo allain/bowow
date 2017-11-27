@@ -5,8 +5,8 @@ A micro-library for browser automation.
 ## Features
 
 * Tiny API (1 function + some helpers)
-* jQuery injection
-* Built directly on the w3c-webdriver spec
+* jQuery always available
+* Built directly on the [w3c-webdriver spec](https://w3c.github.io/webdriver/webdriver-spec.html).
 
 ## Usage
 
@@ -15,7 +15,7 @@ Search Google and return the first search result's url.
 ```js
 const bowow = require('.')
 
-bowow(async ($, $$) => {
+bowow(async $ => {
   // Navigate to google
   await $('https://www.google.com')
 
@@ -25,27 +25,27 @@ bowow(async ($, $$) => {
     .blur()
 
   // Click on the Search button
-  await $$(`input[type='button'][value='Google Search']`).click()
+  await $(`input[type='button'][value='Google Search']`).click()
 
   // Extract the first link's url
-  return $$('#res #search .srg h3:first').attr('href')
+  return $('#res #search .srg h3:first').attr('href')
 }).then(console.log)
 ```
 
 ## API
 
-### `bowow(async ($, $$) => {...}) : Promise`
+### `bowow(async $ => {...}) : Promise`
 
-Accepts a function receiving `$` and `$$` params. `$` is the workhorse of the library, and $$ is a utility that behaves much like `$` but waits till elements match its selector. Failing if not found in the appropriate time.
+Accepts a function receiving `$`. `$` is the workhorse of the library.
 
 ### `$(fn : Function) : Promise`
 
-This is the core of the library. The passed function will be executed in the context of the browser. Any returned value will be invoked as a returned as a resolving `Promise`.
+This is the core of the library. The passed function will be executed in the context of the browser. Any returned value will be invoked as a returned as a resolving `Promise`. All other thigns this library does delegate to this under the hood.
 
-### `$(selector: string) : jQueryPromise`
+### `$(selector, wait = 30) : jQueryPromise`
 
-This is a helper that makes working with jQuery a trivial undertaking. When provided with a jQuery selector, `$` acts like jQuery would, except it is also a `Promise`, executing in the browser when it's invoked. I acknowledge that is a bit of magic, but being able to use jQuery without jumping through hoops is worth looking the other way.
+This is a helper that makes working with jQuery a trivial undertaking. When provided with a jQuery selector, `$` acts like jQuery would, except it is also a `Promise` that executes in the browser whenever it's asked to `then`. I acknowledge that is a **bit of magic**<sup>tm</sup> but being able to use jQuery without jumping through hoops is worth looking the other way.
 
-Under the hood `$('input').val('test').blur()` gets transformed into `$(() => jQuery('input').val('test').blur())` but is much easier to think about.
+Under the hood `$('input').val('test').blur()` gets transformed into `$(() => wait$('input', {timeout: 30000}).then(els =>  els.val('test').blur()))` but is much easier to think about. If you don't like **magic**, feel free to expand it yourself.
 
-### `$$(selector : string) : Promised + jQuery`
+`wait` tells the jQuery Proxy to wait this many seconds before Timing out. -1 tells the Proxy that the code should execute immediately, and not fail is no elements match it (how jQuery would behave normally).
