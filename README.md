@@ -10,7 +10,7 @@ A micro-library for browser automation.
 
 ## Example Usage
 
-Thie example searches Google and returns the first search result's url.
+Thie example searches Google and returns the list of urls returned on the first page.
 
 ```js
 const bowow = require('.')
