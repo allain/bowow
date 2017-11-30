@@ -13,7 +13,9 @@ bowow($ => {
   $(`input[value='Google Search']`).click()
 
   // collect all links in search results
-  const urls = $('#res #search h3 > a').map((index, e) => $(e).attr('href'))
-
-  return urls
+  return $('#res #search h3 > a')
+    .map(function() {
+      return $(this).attr('href')
+    })
+    .get()
 }).then(console.log) // outputs an array of urls
