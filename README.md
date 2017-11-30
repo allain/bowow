@@ -46,3 +46,5 @@ This is the core of the library. It performs the passed function in the browser 
 ### `$(selector, timeout = 30) : jQueryProxy`
 
 This is a helper that makes working with jQuery a trivial undertaking. When provided with a jQuery selector, `$` acts like jQuery would, except it throws an exception if the selector fails to match any elements within the specifies timeout (in seconds). If you want to disable that check, pass in -1 as the timeout value.
+
+### $(selector).type('text')
