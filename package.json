@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand --verbose"
   },
   "repository": {
     "type": "git",
