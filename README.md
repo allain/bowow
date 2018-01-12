@@ -8,6 +8,8 @@ A micro-library for browser automation.
 * jQuery is always available
 * Synchronous API
 * Built directly on the [w3c-webdriver spec](https://w3c.github.io/webdriver/webdriver-spec.html).
+* Supports taking Screnshots
+* Supports mobile device emulation
 
 ## Example Usage
 
@@ -35,9 +37,10 @@ bowow($ => {
 
 ## API
 
-### `bowow($ => {...}) : Promise`
+### `bowow($ => {...}, opts = { headless: false, device: null }) : Promise`
 
-Accepts a function receiving a jQueryProxy.
+Accepts a function that will receive a jQueryProxy. Supporting some configuration through the opts parameter.
+
 
 ### `$(fn : Function)`
 
@@ -48,3 +51,11 @@ This is the core of the library. It performs the passed function in the browser 
 This is a helper that makes working with jQuery a trivial undertaking. When provided with a jQuery selector, `$` acts like jQuery would, except it throws an exception if the selector fails to match any elements within the specifies timeout (in seconds). If you want to disable that check, pass in -1 as the timeout value.
 
 ### $(selector).type('text')
+
+Sends keystrokes to the targetted elements. Can be used to upload a file, like so: `$('input[type=file]).type('/tmp/image.png')`.
+
+### $.screenshot() : path
+
+Takes a screenshot and saves it to a temporary file, returing the full path to the file.
+
+
