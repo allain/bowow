@@ -58,4 +58,11 @@ Sends keystrokes to the targetted elements. Can be used to upload a file, like s
 
 Takes a screenshot and saves it to a temporary file, returing the full path to the file.
 
+### $(ms: number)
+
+Waits synchronously for the number of milliseconds given.
+
+### $.downloads(wait = false) : string[]
+
+Returns an array of all files in the download directory. If wait is true it'll wait until a new file appears in the directory.
 
