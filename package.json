@@ -4,7 +4,6 @@
   "description": "A micro browser automation tool",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
     "test": "jest --runInBand --verbose"
   },
   "repository": {
@@ -28,22 +27,12 @@
     "chromedriver": "^2.36.0",
     "debug": "^3.1.0",
     "get-port": "^3.2.0",
-    "jquery": "^3.2.1",
+    "jquery": "^3.3.1",
     "sync-request": "^4.1.0",
     "tmp": "0.0.33",
     "wait-for-port": "0.0.2"
   },
   "devDependencies": {
-    "eslint": "^4.8.0",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-config-prettier-standard": "^1.0.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.2.0",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "jest": "^21.2.1",
-    "prettier": "^1.7.4"
+    "jest": "^23.1.0"
   }
 }
