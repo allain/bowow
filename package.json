@@ -24,11 +24,11 @@
   },
   "homepage": "https://github.com/allain/bowow#readme",
   "dependencies": {
-    "chromedriver": "^2.36.0",
+    "chromedriver": "^2.40.0",
     "debug": "^3.1.0",
     "get-port": "^3.2.0",
     "jquery": "^3.3.1",
-    "sync-request": "^4.1.0",
+    "sync-request": "^6.0.0",
     "tmp": "0.0.33",
     "wait-for-port": "0.0.2"
   },
