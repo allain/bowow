@@ -37,7 +37,7 @@ bowow($ => {
 
 ## API
 
-### `bowow($ => {...}, opts = { headless: false, device: null }) : Promise`
+### `bowow($ => {...}, opts = { headless: false, device: null, mobileEmulation: null }) : Promise`
 
 Accepts a function that will receive a jQueryProxy. Supporting some configuration through the opts parameter.
 
