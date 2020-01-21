@@ -24,15 +24,15 @@
   },
   "homepage": "https://github.com/allain/bowow#readme",
   "dependencies": {
-    "chromedriver": "^2.46.0",
+    "chromedriver": "^79.0.0",
     "debug": "^4.1.1",
-    "get-port": "^4.1.0",
+    "get-port": "^4.2.0",
     "jquery": "^3.4.1",
-    "sync-request": "^6.0.0",
+    "sync-request": "^6.1.0",
     "tmp": "0.0.33",
     "wait-for-port": "0.0.2"
   },
   "devDependencies": {
-    "jest": "^24.1.0"
+    "jest": "^24.9.0"
   }
 }
